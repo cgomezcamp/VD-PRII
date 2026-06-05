@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turismo y bienestar social en Canarias · ¿Quién se beneficia?</title>
+<meta name="description" content="Reportaje interactivo de datos sobre la contradicción entre el auge turístico y la pobreza en Canarias. Datos del ISTAC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<header class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="kicker">Visualización de datos · Canarias</p>
+    <h1>Turismo y bienestar social<br>en Canarias</h1>
+    <p class="hero__question">¿Quién se beneficia?</p>
+    <p class="hero__lede">Las Islas Canarias baten récord de turistas año tras año. También encabezan, año tras año, las listas de pobreza de España. Este reportaje cruza los datos del <abbr title="Instituto Canario de Estadística">ISTAC</abbr> para preguntar a dónde va la riqueza que genera el turismo.</p>
+    <p class="hero__scroll" aria-hidden="true">Desliza para explorar ↓</p>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- INTRO / CONTEXTO -->
+  <section class="section section--text">
+    <div class="wrap-narrow">
+      <span class="section__num">00</span>
+      <h2>Una contradicción que sale a la calle</h2>
+      <p>En abril de 2024, Canarias vivió la mayor manifestación de su historia reciente bajo el lema <em>«Canarias tiene un límite»</em>. Miles de personas reclamaron un cambio de modelo turístico. No es un fenómeno aislado: territorios insulares como Hawái o Puerto Rico discuten la misma tensión entre la economía del visitante y la vida de quien reside.</p>
+      <p>Los datos de turismo suelen medir volumen y gasto. Para entender el impacto sobre la población local hay que cruzarlos con indicadores de pobreza, economía y percepción social. Eso es lo que hacen los tres gráficos que siguen.</p>
+      <div class="questions">
+        <p class="questions__title">Tres preguntas guían este análisis:</p>
+        <ol>
+          <li>¿Ha crecido el bienestar de la población al mismo ritmo que el turismo?</li>
+          <li>¿Concentran las mismas islas el turismo y el malestar social? ¿Hay correlación territorial?</li>
+          <li>¿Cómo perciben los residentes el impacto del turismo, y hay diferencias por isla, sexo o edad?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q1 DESACOPLE -->
+  <section class="section" id="desacople">
+    <div class="wrap">
+      <span class="section__num">01</span>
+      <h2>El desacople: la riqueza sube, la pobreza no baja igual</h2>
+      <p class="section__lede">Tomando 2018 como punto de partida (índice 100), comparamos cómo han evolucionado los turistas que llegan, el PIB por habitante y la tasa de pobreza o exclusión (AROPE). Si el bienestar siguiera al turismo, las tres líneas se moverían juntas.</p>
+
+      <div class="chart-controls" role="group" aria-label="Mostrar u ocultar series del gráfico">
+        <button class="toggle is-on" data-serie="tur_idx" style="--c:var(--c-tur)">Turistas</button>
+        <button class="toggle is-on" data-serie="pib_idx" style="--c:var(--c-pib)">PIB por habitante</button>
+        <button class="toggle is-on" data-serie="arope_idx" style="--c:var(--c-arope)">Riesgo de pobreza (AROPE)</button>
+      </div>
+
+      <figure class="chart-figure">
+        <div id="chart-desacople" class="chart" role="img" aria-label="Gráfico de líneas indexadas a base 100 en 2018. Los turistas y el PIB por habitante de Canarias suben por encima de 100 hasta 2024-2025, mientras la tasa de pobreza AROPE se mantiene cerca de 100 y solo baja a 87 en los dos últimos años."></div>
+        <figcaption>Índice 2018 = 100. Fuente: ISTAC (FRONTUR, Contabilidad regional, AROPE). El PIB por habitante aún no tiene dato de 2025.</figcaption>
+      </figure>
+
+      <div class="readout" id="readout-desacople" aria-live="polite"></div>
+
+      <div class="takeaway">
+        <p>En 2025 llegan un <strong>20&nbsp;% más</strong> de turistas que en 2018 y el PIB por habitante crece un <strong>24&nbsp;%</strong>. Pese a ello, <strong>1 de cada 3 canarios</strong> sigue en riesgo de pobreza o exclusión: un 32&nbsp;%, muy por encima del 26&nbsp;% de España. El turismo récord no cierra la brecha social.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q2 ISLAS -->
+  <section class="section section--alt" id="islas">
+    <div class="wrap">
+      <span class="section__num">02</span>
+      <h2>¿Más turismo, residentes más críticos?</h2>
+      <p class="section__lede">La pobreza no se publica isla por isla, así que aquí medimos la <strong>presión turística</strong> (turistas en 2024 por cada residente adulto) frente a la opinión de quien vive allí. Cada burbuja es una isla; su tamaño refleja el total de turistas.</p>
+
+      <figure class="chart-figure">
+        <div id="chart-presion" class="chart" role="img" aria-label="Gráfico de dispersión. El eje horizontal es turistas por residente adulto en 2024; el vertical, el porcentaje de residentes que cree que los beneficios del turismo superan a sus costes. Lanzarote y Fuerteventura tienen la mayor presión turística, con más de 20 turistas por adulto."></div>
+        <figcaption>Eje X: turistas 2024 por residente de 18+. Eje Y: % que opina que los beneficios del turismo superan sus costes. Fuente: ISTAC (FRONTUR, ECOSOC).</figcaption>
+      </figure>
+
+      <div class="takeaway">
+        <p>Lanzarote y Fuerteventura soportan una presión extrema —más de <strong>20 turistas por cada residente adulto</strong>— y son, a la vez, donde más gente considera que el turismo compensa. Las islas capitalinas, con menos presión relativa, se muestran más divididas. La relación no es lineal: depende de cuánto dependa la economía local del visitante.</p>
+      </div>
+
+      <h3 class="subhead">Cuántos turistas recibe cada isla</h3>
+      <p class="section__lede">Desliza por los años para ver el desplome de la pandemia y la recuperación posterior, hoy en máximos históricos.</p>
+      <div class="chart-controls chart-controls--slider">
+        <label for="year-slider">Año: <strong id="year-label">2024</strong></label>
+        <input type="range" id="year-slider" min="2018" max="2025" value="2024" step="1" aria-label="Seleccionar año">
+      </div>
+      <figure class="chart-figure">
+        <div id="chart-islas" class="chart" role="img" aria-label="Gráfico de barras del número de turistas por isla en el año seleccionado."></div>
+        <figcaption>Turistas por isla y año. Fuente: ISTAC (FRONTUR). La Gomera y El Hierro no se publican en esta serie.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Q3 PERCEPCION -->
+  <section class="section" id="percepcion">
+    <div class="wrap">
+      <span class="section__num">03</span>
+      <h2>Lo que opinan quienes viven aquí</h2>
+      <p class="section__lede">Grado de acuerdo de la población de cada isla con tres afirmaciones sobre el turismo (2024). Elige la afirmación para comparar las islas.</p>
+
+      <div class="chart-controls chart-controls--select">
+        <label for="afirm-select">Afirmación valorada:</label>
+        <select id="afirm-select"></select>
+      </div>
+      <p class="afirm-actual" id="afirm-actual"></p>
+
+      <figure class="chart-figure">
+        <div id="chart-percepcion" class="chart" role="img" aria-label="Gráfico de barras apiladas divergentes que muestra, por isla, el porcentaje de población de acuerdo y en desacuerdo con la afirmación seleccionada."></div>
+        <figcaption>Barras divergentes: a la derecha, acuerdo; a la izquierda, desacuerdo. Fuente: ISTAC (ECOSOC).</figcaption>
+      </figure>
+      <div class="legend" id="legend-percepcion" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- GENERO -->
+  <section class="section section--alt" id="genero">
+    <div class="wrap-narrow">
+      <span class="section__num">04</span>
+      <h2>Una mirada de género: la tasa turística</h2>
+      <p class="section__lede">¿Deberían los turistas pagar una tasa por noche? La respuesta cambia según el sexo de quien contesta.</p>
+      <figure class="chart-figure">
+        <div id="chart-genero" class="chart" role="img" aria-label="Gráfico de barras comparando la opinión de hombres y mujeres sobre una tasa turística. Las mujeres apoyan la tasa en mayor proporción que los hombres."></div>
+        <figcaption>Población de 18+ de Canarias, 2024. Fuente: ISTAC (ECOSOC).</figcaption>
+      </figure>
+      <div class="takeaway">
+        <p>Las mujeres apoyan la tasa turística más que los hombres (<strong>46&nbsp;%</strong> frente a <strong>40&nbsp;%</strong>), mientras que ellos la rechazan en mayor medida (<strong>30&nbsp;%</strong> frente a <strong>18&nbsp;%</strong>). El malestar con el modelo turístico tiene también una dimensión de género.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFLEXION / FUENTES -->
+  <section class="section section--text" id="cierre">
+    <div class="wrap-narrow">
+      <span class="section__num">05</span>
+      <h2>Qué nos dicen los datos</h2>
+      <p>El crecimiento turístico de Canarias es real y sostenido, y arrastra al PIB por habitante hacia máximos. Pero ese empuje no se traduce en un bienestar equivalente: la tasa de pobreza apenas mejora y mantiene una distancia estructural con la media española. La riqueza se genera; la pregunta es dónde se queda.</p>
+      <p class="note"><strong>Límites de este análisis.</strong> La pobreza (AROPE) solo se publica para el conjunto de Canarias, no por isla, lo que impide una correlación territorial directa con el turismo. Los datos de percepción y dependencia corresponden a 2024 y no permiten ver su evolución. La presión turística se calcula con población adulta encuestada, no con población total.</p>
+      <div class="fuentes">
+        <h3>Fuentes</h3>
+        <p>Todos los datos proceden del <a href="https://www.gobiernodecanarias.org/istac/" target="_blank" rel="noopener">Instituto Canario de Estadística (ISTAC)</a>: encuesta ECOSOC (percepción y dependencia del turismo), FRONTUR (turistas por procedencia y destino), indicador AROPE de riesgo de pobreza, Contabilidad regional (PIB) y residuos urbanos. Los conjuntos limpios y el código están disponibles en el repositorio del proyecto.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Cristina Gómez Campos · Visualización de datos · 2025</p>
+  <p class="footer__meta">Datos: ISTAC · Construido con D3.js · Código abierto (licencia MIT)</p>
+</footer>
+
+<div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="data.js"></script>
+<script src="charts.js"></script>
+</body>
+</html>

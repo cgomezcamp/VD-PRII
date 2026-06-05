@@ -19,7 +19,6 @@ index.html        Estructura del reportaje
 style.css         Estilos (tema editorial)
 charts.js         Visualizaciones interactivas con D3.js
 data.js           Datos del proyecto embebidos (generados desde el ISTAC)
-datos/            Conjuntos de datos limpios en formato CSV (formato largo)
 LICENSE           Licencia MIT
 ```
 
